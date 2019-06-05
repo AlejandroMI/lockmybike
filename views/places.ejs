@@ -1,0 +1,52 @@
+<% include partials/header%>
+
+ <!-- Welcome Hero -->
+ <section class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-2">
+        Find the best places to leave your bike. Help others to keep theirs safe.
+      </h1>
+      <h2 class="subtitle">
+        Start contributing now
+      </h2>
+      <a class="button is-light is-outlined is-rounded" href="/places/new">Add Place</a> 
+    </div>
+  </div>
+ </section>
+ <!-- Welcome Hero -->
+ 
+ <!-- Places Grid -->
+ <section class="section">
+     <div class="container">
+         <div class="columns is-multiline">
+             
+             <!-- Card -->
+             <% places.forEach(function(place){ %>
+             
+             <div class="column is-4">
+                 <div class="card">
+                     <!-- Card Image -->
+                     <div class="card-image">
+                        <figure class="image is-4by3">
+                          <img src="<%= place.image%>" alt="Placeholder image">
+                        </figure>
+                      </div>  
+                      <!--Card Content-->
+                      <div class="card-content">
+                          <!-- Card Title -->
+                          <p class="title is-4"><%= place.name%></p>
+                          <p class="subtitle is-6">Security Rate: 7</p>
+                      </div>
+                 </div>
+             </div>
+             
+             <% }); %>
+             <!-- Card -->
+             
+         </div>
+     </div>
+ </section>
+ <!-- Places Grid -->
+    
+<% include partials/footer%>

@@ -1,0 +1,26 @@
+<% include partials/header%>
+
+ <section class="section">
+     <div class="container">
+        <h1 class="title">Add a new place</h1>
+        <form action="/places" method="POST">
+            <div class="field">
+              <label class="label">Place</label>
+              <div class="control">
+                <input class="input" name="name" type="text" placeholder="e.g Racks at Bishop Gate">
+              </div>
+            </div>
+            
+            <div class="field">
+              <label class="label">Image URL</label>
+              <div class="control">
+                <input class="input" name="image" type="text" placeholder="e.g. http://myimage...">
+              </div>
+            </div> 
+            <button class="button is-primary is-rounded" type="submit">Add</button>
+            <a class="button is-rounded is-text"href="/places">Go Back</a>
+        </form>
+     </div>
+ </section>  
+
+<% include partials/footer%>
