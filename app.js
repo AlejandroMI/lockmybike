@@ -58,6 +58,7 @@ function addLocation(name,image) {
     });
 }
 
+
 ////////
 
 
@@ -100,8 +101,16 @@ app.get("/locations/new", function(req, res) {
 });
 
 //SHOW
-app.get("locations/:id", function(req, res) {
-    res.send("Future show route");
+app.get("/locations/:id", function(req, res) {
+    //Get de id from the request
+    Location.findById(req.params.id,function(err,location){
+        if(err){
+            console.log(err);
+        }else{
+            console.log("Success" );
+            res.render("show", {location:location});
+        }
+    });
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
